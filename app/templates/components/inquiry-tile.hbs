@@ -1,3 +1,30 @@
 <li>
 {{inquiry.author}}'s {{inquiry.greatQuestion}} in {{inquiry.notes}}
 </li>
+
+
+{{#if addNewInquiry}}
+  <h1>New Question</h1>
+  <div>
+    <form>
+      <div class="form-group">
+        <label for="author">Author</label>
+        {{input value=author id="author"}}
+      </div>
+
+      <div class="form-group">
+        <label for="greatQuestion">Question</label>
+        {{input value=greatQuestion id="greatQuestion"}}
+      </div>
+
+      <div class="form-group">
+        <label for="notes">City</label>
+        {{input value=notes id="notes"}}
+      </div>
+
+      <button {{action 'saveInquiry'}}>Save</button>
+    </form>
+  </div>
+{{else}}
+  <button {{action 'inquiryFormShow'}}>New Rental</button>
+{{/if}}
