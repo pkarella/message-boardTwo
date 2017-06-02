@@ -1,0 +1,9 @@
+<h1>This is the main page</h1>
+
+<ul>
+  {{#each model as |inquiry|}}
+     {{inquiry-tile inquiry=inquiry}}
+  {{/each}}
+</ul>
+
+{{new-inquiry saveInquiry='saveInquiry'}}
