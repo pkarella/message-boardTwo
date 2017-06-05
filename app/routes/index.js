@@ -9,20 +9,6 @@ export default Ember.Route.extend({
       var newInquiry = this.store.createRecord('inquiry', params);
       newInquiry.save();
       this.transitionTo('index');
-    },
-    update(inquiry, params) {
-      Object.keys(params).forEach(function(key){
-        if(params[key]!==undefined){
-          inquiry.set(key,params[key]);
-        }
-      });
-      inquiry.save();
-      this.transitionTo('index');
-    },
-
-  destroyInquiry(inquiry) {
-      inquiry.destroyRecord();
-      this.transitionTo('index');
     }
-  }
+}
 });

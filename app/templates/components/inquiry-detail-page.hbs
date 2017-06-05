@@ -1,1 +1,8 @@
-{{yield}}
+
+<div class="container">
+<li>
+<p>{{inquiry.author}}</p> <p>{{inquiry.greatQuestion}}</p> <p>{{inquiry.notes}}</p>
+
+<button {{action 'delete' inquiry}}> Delete Question </button>
+</li>
+</div>
