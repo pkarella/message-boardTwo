@@ -5,7 +5,12 @@ export default Ember.Route.extend({
     return this.store.findAll('inquiry');
  },
  actions: {
-    destroyInquiry(inquiry) {
+    saveInquiry(params) {
+      var newInquiry = this.store.createRecord('inquiry', params);
+      newInquiry.save();
+      this.transitionTo('index');
+    },
+  destroyInquiry(inquiry) {
       inquiry.destroyRecord();
       this.transitionTo('index');
     }

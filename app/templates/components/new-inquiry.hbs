@@ -1,0 +1,25 @@
+{{#if addNewInquiry}}
+  <h1>New Question</h1>
+  <div>
+    <form>
+      <div class="form-group">
+        <label for="author">Author</label>
+        {{input value=author id="author"}}
+      </div>
+
+      <div class="form-group">
+        <label for="greatQuestion">Question</label>
+        {{input value=greatQuestion id="greatQuestion"}}
+      </div>
+
+      <div class="form-group">
+        <label for="notes">Write some notes here</label>
+        {{input value=notes id="notes"}}
+      </div>
+
+      <button {{action 'saveInquiry'}}>Save</button>
+    </form>
+  </div>
+{{else}}
+  <button {{action 'inquiryFormShow'}}>New Question</button>
+{{/if}}
