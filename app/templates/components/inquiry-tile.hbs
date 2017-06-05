@@ -1,5 +1,6 @@
 <li>
-{{inquiry.author}}'s {{inquiry.greatQuestion}} in {{inquiry.notes}}
+{{inquiry.author}} {{inquiry.greatQuestion}} {{inquiry.notes}}
+<button {{action 'delete' inquiry}}> Delete Question </button>
 </li>
 
 
@@ -26,5 +27,5 @@
     </form>
   </div>
 {{else}}
-  <button {{action 'inquiryFormShow'}}>New Rental</button>
+  <button {{action 'inquiryFormShow'}}>New Question</button>
 {{/if}}

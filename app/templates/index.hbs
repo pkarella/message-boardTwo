@@ -2,8 +2,8 @@
 
 <ul>
   {{#each model as |inquiry|}}
-     {{inquiry-tile inquiry=inquiry}}
+     {{inquiry-tile inquiry=inquiry destroyInquiry="destroyInquiry"}}
   {{/each}}
-</ul>
 
-{{new-inquiry saveInquiry='saveInquiry'}}
+{{inquiry-tile saveInquiry="saveInquiry"}}
+</ul>

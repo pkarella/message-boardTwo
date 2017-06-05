@@ -6,14 +6,10 @@ export default Ember.Component.extend({
     inquiryFormShow() {
       this.set('addNewInquiry', true);
     },
-    saveInquiry() {
-          var params = {
-            author: this.get('author'),
-            greatQuestion: this.get('greatQuestion'),
-            notes: this.get('notes'),
-          };
-          this.set('addNewInquiry', false);
-          this.sendAction('saveInquiry', params);
-        }
+    delete(inquiry) {
+      if (confirm('Are you sure you would like to erase your question?')){
+        this.sendAction('destroyInquiry', inquiry);
       }
-    });
+      }
+    }
+  });
