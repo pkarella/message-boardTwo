@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   updateInquiryForm: false,
   actions: {
-    updateInquiryForm() {
+    updateFormShow() {
       this.set('updateInquiryForm', true);
     },
     update(inquiry) {

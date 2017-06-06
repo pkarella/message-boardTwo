@@ -1,3 +1,11 @@
 
-
-{{outlet}}
+<div class= "container">
+  <header class= "jumbotron">
+    <h1>Questions & Answers </h1>
+  </header>
+    {{outlet}}
+  <hr>
+  <footer>
+    {{#link-to 'inquiry'}}Click here to be heard{{/link-to}}
+  </footer>
+</div>

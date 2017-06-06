@@ -1,3 +1,35 @@
-<h2>To give your answer to the question {{model.greatQuestion}}</h2>
-{{update-inquiry inquiry=model update="update"}}
-{{inquiry-detail-page inquiry=model destroyInquiry="destroyInquiry"}}
+
+<div class="container">
+  <div class="panel panel-info">
+    <div class="panel panel-heading">
+
+    <div class="panel panel-body">
+      <h3>By {{model.author}}</h3>
+
+      <p>
+        {{model.greatQuestion}}
+      </p>
+      <h5>{{model.notes}}</h5>
+    </div>
+      {{update-inquiry inquiry=model update="update"}}<br>
+
+      <button class="btn btn-info"{{action 'delete' model}}>Delete Question</button><br>
+      <br>
+    </div>
+  </div>
+
+  <div class="panel panel-success">
+    <div class="panel panel-heading">
+      <h2>{{if model.answers "Answers"}}</h2>
+    </div>
+    <div class="panel panel-body">
+      {{#each model.answers as |answer|}}
+        {{answer-tile answer=answer destroyAnswer="destroyAnswer" updateAnswer="updateAnswer"}}
+      {{/each}}
+      <br>
+      {{new-answer inquiry=model saveAnswer='saveAnswer'}}<br>
+    </div>
+  </div>
+
+
+</div>

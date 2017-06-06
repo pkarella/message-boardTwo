@@ -1,0 +1,30 @@
+
+<h4><b>{{answer.name}}</b></h4>
+<p>
+  {{answer.newAnswer}}
+</p>
+
+<button class="btn btn-success"{{action 'delete' answer}}> Delete Answer</button><br>
+
+{{#if updateAnswerForm}}
+<div class="container">
+
+
+<h1>New Answer</h1>
+  <div>
+    <form>
+      <div class="form-group">
+        <label for="updateName">Author</label>
+        {{input value=updateName id="updateName"}}
+      </div>
+      <div class="form-group">
+        <label for="updateNewAnswer">Answer</label>
+        {{input value=updateNewAnswer id="updateNewAnswer"}}
+      </div>
+    <button class="btn btn-success"{{action 'updateAnswer' answer}}>Update</button>
+    </form>
+  </div>
+  </div>
+{{else}}
+  <button class="btn btn-info"{{action 'showUpdateAnswer'}}>Update Answer</button>
+{{/if}}
